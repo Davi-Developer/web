@@ -1,0 +1,21 @@
+{
+    "name": "KanbanFlow",
+    "short_name": "Kanban",
+    "description": "Gerencie seus projetos com estilo usando KanbanFlow",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#1a1a2e",
+    "theme_color": "#33ffcc",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

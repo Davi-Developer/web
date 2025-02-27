@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <title>KanbanFlow - Gerencie com Estilo</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#33ffcc"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            background: linear-gradient(90deg, #33ffcc, #66d9ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #33ffcc;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Kanban Container */
+        .kanban-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .kanban-column {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .kanban-column:hover {
+            transform: translateY(-10px);
+        }
+
+        .column-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #33ffcc;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .card h3 {
+            color: #66d9ff;
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #33ffcc;
+            color: #1a1a2e;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #66d9ff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #33ffcc;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .kanban-column, .hero {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .kanban-column {
+                min-width: 100%;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KanbanFlow</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Recursos</a></li>
+                <li><a href="#pricing">Preços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Organize. Colabore. Prospere.</h2>
+        <p>Gerencie seus projetos com eficiência usando nosso sistema Kanban moderno e intuitivo.</p>
+        <a href="#pricing" class="cta-button">Comece Agora</a>
+    </section>
+
+    <main class="kanban-container" id="features">
+        <section class="kanban-column">
+            <h2 class="column-title">Descubra</h2>
+            <div class="card">
+                <h3>Gestão Visual</h3>
+                <p>Organize suas tarefas com quadros Kanban interativos.</p>
+            </div>
+            <div class="card">
+                <h3>Colaboração</h3>
+                <p>Trabalhe em equipe com atualizações em tempo real.</p>
+            </div>
+        </section>
+
+        <section class="kanban-column">
+            <h2 class="column-title">Recursos</h2>
+            <div class="card">
+                <h3>Analytics</h3>
+                <p>Acompanhe o progresso com relatórios detalhados.</p>
+            </div>
+            <div class="card">
+                <h3>Integrações</h3>
+                <p>Conecte-se com Slack, Trello e mais.</p>
+            </div>
+        </section>
+
+        <section class="kanban-column" id="pricing">
+            <h2 class="column-title">Comece Agora</h2>
+            <div class="card">
+                <h3>Planos</h3>
+                <p>Planos a partir de $9/mês. Teste grátis por 30 dias!</p>
+                <a href="#" class="cta-button">Experimente Grátis</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2025 KanbanFlow. Todos os direitos reservados.</p>
+        <div>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
